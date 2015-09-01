@@ -1,0 +1,39 @@
+{
+  "name": "json-array-streams",
+  "version": "1.0.0",
+  "description": "Streams for JSON array parsing/stringifying",
+  "keywords": [
+    "streams",
+    "json"
+  ],
+  "homepage": "https://el-tramo.be/json-array-streams",
+  "license": "MIT",
+  "author": "Remko Tronçon",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/remko/json-array-streams"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha",
+    "lint": "./node_modules/.bin/eslint .",
+    "coverage": "node_modules/.bin/istanbul cover node_modules/mocha/bin/_mocha"
+  },
+  "dependencies": {
+    "jsonparse": "^1.0.0",
+    "through2": "^2.0.0"
+  },
+  "devDependencies": {
+    "chai": "~1.9.1",
+    "eslint": "^0.21.0",
+    "eslint-config-remko": "^1.0.0",
+    "ghooks": "^0.3.0",
+    "istanbul": "~0.3.0",
+    "mocha": "~1.21.4"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "./node_modules/.bin/eslint ."
+    }
+  }
+}
