@@ -33,6 +33,9 @@ function createStringifyStream() {
 			cb();
 		}, 
 		function (cb) {
+			if (first) {
+				this.push("[");
+			}
 			this.push("]");
 			cb();
 		});

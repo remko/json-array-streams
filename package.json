@@ -15,21 +15,20 @@
     "url": "https://github.com/remko/json-array-streams"
   },
   "scripts": {
-    "test": "node_modules/.bin/mocha",
+    "test": "node_modules/.bin/tape test/**/*.js",
     "lint": "./node_modules/.bin/eslint .",
-    "coverage": "node_modules/.bin/istanbul cover node_modules/mocha/bin/_mocha"
+    "coverage": "node_modules/.bin/istanbul cover test/*.js"
   },
   "dependencies": {
     "jsonparse": "^1.0.0",
     "through2": "^2.0.0"
   },
   "devDependencies": {
-    "chai": "~1.9.1",
     "eslint": "^0.21.0",
-    "eslint-config-remko": "^1.0.0",
+    "eslint-config-remko": "^1.0.4",
     "ghooks": "^0.3.0",
     "istanbul": "~0.3.0",
-    "mocha": "~1.21.4"
+    "tape": "^4.2.0"
   },
   "config": {
     "ghooks": {
