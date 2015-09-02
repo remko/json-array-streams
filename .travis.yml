@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - "0.10"
 before_script: npm install coveralls
-script: node_modules/.bin/istanbul cover --report lcovonly node_modules/mocha/bin/_mocha
+script: npm run coverage
 after_script:
 - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 - rm -rf ./coverage
