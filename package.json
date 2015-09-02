@@ -1,6 +1,6 @@
 {
   "name": "json-array-streams",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Streams for JSON array parsing/stringifying",
   "keywords": [
     "streams",
