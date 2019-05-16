@@ -5,11 +5,11 @@ var through = require('through2');
 var jsonArrayStreams = require('../index');
 var Readable = require('stream').Readable;
 
-function createStringifyStream(dataCB) {
+function createStringifyStream(dataCB, replacer, space) {
 	var input = new Readable({objectMode: true});
 	input._read = function () {};
 	input
-		.pipe(jsonArrayStreams.stringify())
+		.pipe(jsonArrayStreams.stringify(replacer, space))
 		.pipe(through.obj(
 			function (chunk, enc, cb) {
 				dataCB(chunk);
@@ -88,6 +88,21 @@ test("stringify stream", function (t) {
 
 	input.on('end', function () { 
 		t.equal(result, '[42,"foo",{"key":"value"}]');
+		t.end(); 
+	});
+});
+
+test("with space", function (t) {
+	var result = "";
+	var input = createStringifyStream(function (chunk) {
+		result = result + chunk;
+	}, null, 2);
+
+	input.push({key: "value"});
+	input.push(null);
+
+	input.on('end', function () { 
+		t.equal(result, '[{\n  "key": "value"\n}]');
 		t.end(); 
 	});
 });

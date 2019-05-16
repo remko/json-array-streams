@@ -18,7 +18,7 @@ function createParseStream() {
 		});
 }
 
-function createStringifyStream() {
+function createStringifyStream(replacer, space) {
 	var first = true;
 	return through.obj(
 		function (value, enc, cb) {
@@ -29,7 +29,7 @@ function createStringifyStream() {
 			else {
 				this.push(",");
 			}
-			this.push(JSON.stringify(value));
+			this.push(JSON.stringify(value, replacer, space));
 			cb();
 		}, 
 		function (cb) {
