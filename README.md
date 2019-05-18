@@ -34,6 +34,8 @@ this to/from storage.
 
 Create a parsing stream.
 
-### `jsonArrayStreams.stringify()`
+### `jsonArrayStreams.stringify([replacer, [space]])`
 
 Create a stringifying stream.
+
+replacer, space are optional parameters that are passed through to JSON.stringify, to support pretty-printing the output.
