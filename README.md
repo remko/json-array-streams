@@ -38,4 +38,4 @@ Create a parsing stream.
 
 Create a stringifying stream.
 
-replacer, space are optional parameters that are passed through to JSON.stringify, to support pretty-printing the output.
+`replacer`, `space` are optional parameters that are passed to `JSON.stringify`, to support pretty-printing the output.
